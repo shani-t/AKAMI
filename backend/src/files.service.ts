@@ -21,7 +21,7 @@ export class FilesService {
           }
         } else if (typeof tree === 'object') {
           for (let key in tree) {
-             if (searchText != null && key == 'files'){
+             if (searchText !== null && key === 'files'){
               tree[key] = tree[key].filter(x=>x.includes(searchText));
             }
             tree[key] = this.filterTree(tree[key], searchText);

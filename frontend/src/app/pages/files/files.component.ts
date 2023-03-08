@@ -62,7 +62,7 @@ export class FilesComponent implements OnInit, OnDestroy {
 
   applyFilter(filterText: string) {
     filterText = filterText.trim().toLowerCase();
-    if(filterText == ""){
+    if(filterText === ""){
       this.dataSource.data = this.store.selectSnapshot(FilesState.tree);
       return;
     }
