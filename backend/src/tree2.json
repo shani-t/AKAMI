@@ -1,0 +1,48 @@
+
+[
+
+  {
+
+    "name": "/",
+
+    "files": ["test.js", "package.json"],
+
+    "directories": [
+
+      {
+
+        "name": "src",
+
+        "files": ["main.ts", "README.md"],
+
+        "directories": []
+
+      },
+
+      {
+
+        "name": "dist",
+
+        "files": ["vendor.js", "styles.css"],
+
+        "directories": [
+
+          {
+
+            "name": "images",
+
+            "files": ["icons.svg", "main.svg"],
+
+            "directories": []
+
+          }
+
+        ]
+
+      }
+
+    ]
+
+  }
+
+]
