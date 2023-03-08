@@ -8,7 +8,6 @@ import { FetchFiles, FetchFiltredFiles } from './store/files.actions';
 import { Select, Store } from '@ngxs/store';
 import { FilesState } from './store/files.state';
 import { debounceTime, distinctUntilChanged, Observable, Subject, takeUntil } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { FileNode } from './interfaces/file-node.interface';
 import { FlatNode } from './interfaces/flat-node.interface';
 
@@ -56,7 +55,7 @@ export class FilesComponent implements OnInit, OnDestroy {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   hasChild = (_: number, node: FlatNode) => node.expandable;
 
-  constructor( private store: Store, private http: HttpClient) {
+  constructor( private store: Store) {
   }
 
 

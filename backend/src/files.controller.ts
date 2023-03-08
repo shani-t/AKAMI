@@ -1,4 +1,4 @@
-import { Controller, Get, Param} from '@nestjs/common';
+import { Controller, Get, Param, Query} from '@nestjs/common';
 import { FilesService } from './files.service';
 
 @Controller('files')
@@ -8,12 +8,8 @@ export class FilesController {
   ) {}
 
   @Get()
-  async getAllFiles() {
-     return this.filesService.getAllFiles();
-  }
-  @Get(':search')
-  async getFilesFiltered(@Param('search') search: string) {
-     return this.filesService.getFilesFiltered(search);
+  async getFilesFiltered(@Query('q') q: string) {
+     return this.filesService.getFilesFiltered(q);
   }
 
 }

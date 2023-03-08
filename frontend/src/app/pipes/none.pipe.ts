@@ -6,8 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NonePipe implements PipeTransform {
 
   transform(value: any, ...args: unknown[]): string {
-    const res = value ? value : '-';
-    return res;
+    if( Array.isArray(value)){
+      return value.length ? value.join(',') : '[ ]';
+    }
+
+    return  value ? value : '-';
   }
 
 }

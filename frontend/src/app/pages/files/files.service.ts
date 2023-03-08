@@ -14,6 +14,6 @@ export class FilesService {
   }
 
   getFilesFiltered(search: string): Observable<any>{
-    return this.http.get(`http://localhost:3000/files/${search}`);
+    return this.http.get(`http://localhost:3000/files?q=${search}`);
   }
 }

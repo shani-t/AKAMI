@@ -7,10 +7,8 @@
     <!-- Tree node template for leaf nodes -->
     <mat-tree-node  class="main-node" *matTreeNodeDef="let node" matTreeNodePadding>
       <div class="main-files">{{node.name}}</div>
-      <div class="main-files" *ngIf="node.files">
-        <div>files: 
-          <span *ngIf="!node.files?.length">[ ]</span>
-        </div>
+      <div class="main-files" *ngIf="node.files">files:
+        <span *ngIf="!node.files?.length">{{node.files | none}}</span>
         <div #toolTip1 class="file-content" [matTooltip]="node.files" matTooltipPosition="below" [matTooltipDisabled]="isDisabled(toolTip1)" *ngFor="let file of node.files">
           {{file}}
         </div>
@@ -28,10 +26,8 @@
         </mat-icon>
       </button>
       {{node.name}}
-      <div class="main-files" *ngIf="node.files">
-        <div>files:
-          <span *ngIf="!node.files?.length">[ ]</span>
-        </div>
+      <div class="main-files" *ngIf="node.files">files:
+          <span *ngIf="!node.files?.length">{{node.files | none}}</span>
         <div #toolTip2 class="file-content" [matTooltip]="node.files" matTooltipPosition="below" [matTooltipDisabled]="isDisabled(toolTip2)" *ngFor="let file of node.files">
           {{file}}
         </div>

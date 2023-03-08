@@ -5,11 +5,10 @@ import myJson from './tree.json';
 export class FilesService {
     constructor(){}
 
-    async getAllFiles(): Promise<FileNode[]>{
-        return myJson;
-    }
-
     async getFilesFiltered(search: string): Promise<FileNode[]>{
+      if (!search){
+        return myJson;
+      }
       const clone = JSON.parse(JSON.stringify(myJson));
       return this.filterTree(clone, search);
     }
